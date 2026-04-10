@@ -1,6 +1,6 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
-
+import requests
 
 # ✅ Correct connection (SniS)
 cnx = st.connection("snowflake")
