@@ -1,9 +1,6 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-import requests
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
 
 # ✅ Correct connection (SniS)
 cnx = st.connection("snowflake")
@@ -48,3 +45,8 @@ if ingredients_list:
         ).collect()
 
         st.success(f'Your Smoothie is ordered, {name_on_order}!', icon="✅")
+
+
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
